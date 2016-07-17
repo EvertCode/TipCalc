@@ -8,4 +8,4 @@ Calculadora de Propinas
 Es una calculadora de propinas, en la cual nos permite introducir la cantidad a pagar, el porcentaje de propiena a calcular y el numero de personas en las que se dividira el monto total. 
 
 Errores conocidos:
-- Al dar clic(atras) en el activity de detalla la lista de propinas desaparece al volver al activity primcipla.
+- Al dar clic(atras) en el activity de detalla la lista de propinas desaparece al volver al activity principal.
