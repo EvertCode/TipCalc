@@ -49,10 +49,16 @@ public class TipAdapter extends RecyclerView.Adapter<TipAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         TipRecord element = dataSet.get(position);
+        String strSubTotal = String.format(context.getString(R.string.global_message_sub, element.getSubTotal()));
         String strTip = String.format(context.getString(R.string.global_message_tip, element.getTip()));
+        String strTotal = String.format(context.getString(R.string.global_message_total, (element.getBill())));
+        String strTotalTipByPerson = String.format(context.getString(R.string.global_message_total_by_person, element.getTipByPerson()));
 
+        holder.txtSubTotal.setText(strSubTotal);
+        holder.txtTotal.setText(strTotal);
         holder.txtContentDate.setText(element.getDateFormatted());
         holder.txtContent.setText(strTip);
+        holder.txtTotalByPerson.setText(strTotalTipByPerson);
 
         holder.setOnItemClickListener(element, onItemClickListener);
     }
@@ -77,8 +83,17 @@ public class TipAdapter extends RecyclerView.Adapter<TipAdapter.ViewHolder>{
         @BindView(R.id.txtContent)
         TextView txtContent;
 
+        @BindView(R.id.txtSubTotal)
+        TextView txtSubTotal;
+
+        @BindView(R.id.txtTotal)
+        TextView txtTotal;
+
         @BindView(R.id.txtContentDate)
         TextView txtContentDate;
+
+        @BindView(R.id.txtTotalByPerson)
+        TextView txtTotalByPerson;
 
         public ViewHolder(View view){
             super(view);

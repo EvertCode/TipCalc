@@ -9,8 +9,10 @@ import java.util.Date;
 public class TipRecord {
 
 
-    private double bill;
+    private double subTotal;
+    //private double bill;
     private int tipPercentage;
+    private int person;
     private Date timestamp;
 
     public Date getTimestamp() {
@@ -30,15 +32,19 @@ public class TipRecord {
     }
 
     public double getBill() {
-        return bill;
+        return (this.subTotal+this.getTip());
     }
 
-    public void setBill(double bill) {
+   /*public void setBill(double bill) {
         this.bill = bill;
-    }
+    }*/
 
     public double getTip(){
-        return this.bill*(this.tipPercentage/100d);
+        return this.subTotal*(this.tipPercentage/100d);
+    }
+
+    public double getTipByPerson(){
+        return this.getBill()/this.getPerson();
     }
 
     public String getDateFormatted(){
@@ -46,4 +52,19 @@ public class TipRecord {
         return simpleDateFormat.format(this.timestamp);
     }
 
+    public double getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
+    }
+
+    public int getPerson() {
+        return person;
+    }
+
+    public void setPerson(int person) {
+        this.person = person;
+    }
 }

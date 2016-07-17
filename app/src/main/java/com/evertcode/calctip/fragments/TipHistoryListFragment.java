@@ -77,7 +77,8 @@ public class TipHistoryListFragment extends Fragment implements TipHistoryListFr
         //Toast.makeText(getActivity(), tipRecord.getDateFormatted(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), TipDetailActivity.class);
         intent.putExtra(TipDetailActivity.TIP_KEY, tipRecord.getTip());
-        intent.putExtra(TipDetailActivity.BILL_TOTAL_KEY, tipRecord.getBill());
+        intent.putExtra(TipDetailActivity.BILL_SUB_TOTAL_KEY, tipRecord.getSubTotal());
+        //intent.putExtra(TipDetailActivity.BILL_TOTAL_KEY, tipRecord.getBill());
         intent.putExtra(TipDetailActivity.DATE_KEY, tipRecord.getDateFormatted());
         startActivity(intent);
     }

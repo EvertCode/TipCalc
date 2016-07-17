@@ -8,9 +8,39 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="2dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Large Text"
+        android:id="@+id/txtSubTotal"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="2dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Large Text"
         android:id="@+id/txtContent"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="2dp"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:text="Large Text"
+    android:id="@+id/txtTotal"
+    android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="2dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Large Text"
+        android:id="@+id/txtTotalByPerson"
         android:textColor="@color/colorPrimaryDark" />
 
     <TextView

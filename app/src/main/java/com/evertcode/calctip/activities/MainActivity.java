@@ -39,9 +39,13 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.txtTip)
     TextView txtTip;
 
+    @BindView(R.id.totalPerson)
+    TextView totalPerson;
+
     private TipHistoryListFragmentListener fragmentListener;
 
     private final static int TIP_STEP_CHEGE = 1;
+    private final static int DEFAULT_PERSON = 1;
     private final static int DEFAULT_TIP_PERCENTAGE = 10;
 
     @Override
@@ -54,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentListener = (TipHistoryListFragmentListener)tipHistoryListFragment;
 
-
+        this.totalPerson.setText(String.valueOf(DEFAULT_PERSON));
         this.inputPercentage.setText(String.valueOf(DEFAULT_TIP_PERCENTAGE));
     }
 
@@ -88,13 +92,27 @@ public class MainActivity extends AppCompatActivity {
         this.hideKeyBoard();
 
         final String strInputTotal = this.inputBill.getText().toString().trim();
+
+        String strInputPerson = this.totalPerson.getText().toString().trim();
+
+        if(strInputPerson.isEmpty()){
+            this.totalPerson.setText(String.valueOf(DEFAULT_PERSON));
+            strInputPerson = String.valueOf(DEFAULT_PERSON);
+        }
+
         if(!strInputTotal.isEmpty()){
             double total = Double.parseDouble(strInputTotal);
+            int person = Integer.parseInt(strInputPerson);
 
             TipRecord tipRecord = new TipRecord();
-            tipRecord.setBill(total);
+            tipRecord.setSubTotal(total);
+            tipRecord.setPerson(person);
+            //tipRecord.setBill(total);
             tipRecord.setTipPercentage(getTipPorcentage());
             tipRecord.setTimestamp(new Date());
+
+
+
 
 
             String strTip = String.format(getString(R.string.global_message_tip), tipRecord.getTip());

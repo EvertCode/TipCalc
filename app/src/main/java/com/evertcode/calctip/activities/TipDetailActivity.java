@@ -23,7 +23,8 @@ public class TipDetailActivity extends AppCompatActivity {
 
     public final static String TIP_KEY = "tip";
     public final static String DATE_KEY ="timestamp";
-    public final static String BILL_TOTAL_KEY ="total";
+    public final static String BILL_SUB_TOTAL_KEY ="sub";
+    //public final static String BILL_TOTAL_KEY ="total";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +33,10 @@ public class TipDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String strTotal = String.format(getString(R.string.tipdetail_message_tip), intent.getDoubleExtra(BILL_TOTAL_KEY, 0d));
+        String strSubTotal = String.format(getString(R.string.tipdetail_message_tip), intent.getDoubleExtra(BILL_SUB_TOTAL_KEY, 0d));
         String strTip = String.format(getString(R.string.global_message_tip), intent.getDoubleExtra(TIP_KEY, 0d));
 
-        txtBillTotal.setText(strTotal);
+        txtBillTotal.setText(strSubTotal);
         txtTip.setText(strTip);
         txtTimeStamp.setText(intent.getStringExtra(DATE_KEY));
 

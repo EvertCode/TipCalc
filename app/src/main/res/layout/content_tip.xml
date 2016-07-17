@@ -55,13 +55,23 @@
         android:layout_toRightOf="@+id/btnIncrease"
         android:layout_toEndOf="@+id/btnIncrease"/>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/main.hint.total.person"
+        android:ems="10"
+        android:layout_below="@+id/inputPercentage"
+        android:layout_alignStart="@+id/inputPercentage"
+        android:id="@+id/totalPerson" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/main.button.clear"
         android:id="@+id/btnClear"
-        android:layout_below="@+id/inputPercentage"
-        android:layout_alignStart="@+id/inputPercentage" />
+        android:layout_below="@+id/totalPerson"
+        android:layout_alignStart="@+id/totalPerson" />
 
     <View
         android:layout_width="wrap_content"
